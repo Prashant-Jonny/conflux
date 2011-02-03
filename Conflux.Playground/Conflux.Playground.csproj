@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA5451F6-8D07-4769-B285-7FBD2F9746B4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Conflux.Playground</RootNamespace>
+    <AssemblyName>Conflux.Playground</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>649, 665</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Conflux.Playground.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Libcuda">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\libcuda\Binaries\$(Configuration)\Libcuda.dll</HintPath>
+    </Reference>
+    <Reference Include="Libptx">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\libptx\Binaries\$(Configuration)\Libptx.dll</HintPath>
+    </Reference>
+    <Reference Include="Truesight">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\truesight\Binaries\$(Configuration)\Truesight.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\nunit\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit-console-runner, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\nunit\lib\nunit-console-runner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\nunit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\nunit\lib\nunit.util.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Demo\Boilerplate.cs" />
+    <Compile Include="Demo\Kernel.cs" />
+    <Compile Include="MetaTests.cs" />
+    <Compile Include="SampleKernels\Matmul\Domain\Matrix.cs" />
+    <Compile Include="Runtime\Cuda\Jit\Tests.Boilerplate.cs" />
+    <Compile Include="Runtime\Cuda\Jit\Tests.InProduction.cs" />
+    <Compile Include="Runtime\Cuda\Jit\Tests.UnderDevelopment.cs" />
+    <Compile Include="Runtime\Cuda\Jit\Tests.XtrasToBeImplemented.cs" />
+    <Compile Include="SampleKernels\Ricker\Domain\Cell.cs" />
+    <Compile Include="TestRunner.cs" />
+    <Compile Include="SampleKernels\Matmul\MatMulKernel.cs" />
+    <Compile Include="SampleKernels\Matmul\Tests\MatMulKernelTests.cs" />
+    <Compile Include="SampleKernels\Matmul\Tests\MatMulKernel_FastTests.cs" />
+    <Compile Include="SampleKernels\Matmul\Tests\MatMulTestsBoilerplate.cs" />
+    <Compile Include="SampleKernels\Matmul\Tests\MatMulTestsCore.cs" />
+    <Compile Include="SampleKernels\Matmul\MatMulKernel_Fast.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleKernels\Matmul\Domain\SubMatrix.cs" />
+    <Compile Include="SampleKernels\Ricker\WaveKernel.cs" />
+    <Compile Include="SampleKernels\Ricker\Tests\WaveKernelTests.cs" />
+    <Compile Include="SampleKernels\Ricker\Sequential\Calculations.cs" />
+    <Compile Include="SampleKernels\Ricker\Sequential\Dumper.cs" />
+    <Compile Include="SampleKernels\Ricker\Sequential\Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(XENOGEARS)\XenoGears.Playground\XenoGears.Playground.csproj">
+      <Project>{7AE318A4-F8F5-4B18-B738-0E34B43C99D1}</Project>
+      <Name>XenoGears.Playground</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(XENOGEARS)\XenoGears\XenoGears.csproj">
+      <Project>{9435C2AB-D46A-481C-B485-BD74EFAE7D3E}</Project>
+      <Name>XenoGears</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Conflux\Conflux.csproj">
+      <Project>{F9F68B34-8E76-437D-A6D7-0B41E4EC2E69}</Project>
+      <Name>Conflux</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Conflux.Playground.snk" />
+    <None Include="Properties\AssemblyInfo.template" />
+    <EmbeddedResource Include="Runtime\Cuda\Jit\Reference\MatMulKernel.hir" />
+    <EmbeddedResource Include="Runtime\Cuda\Jit\Reference\MatMulKernel.ptx" />
+    <EmbeddedResource Include="Runtime\Cuda\Jit\Reference\MatMulKernel_Fast.hir" />
+    <EmbeddedResource Include="Runtime\Cuda\Jit\Reference\MatMulKernel_Fast.ptx" />
+    <EmbeddedResource Include="Runtime\Cuda\Jit\Reference\WaveKernel.hir" />
+    <EmbeddedResource Include="Runtime\Cuda\Jit\Reference\WaveKernel.ptx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\ThirdPartyStuff\autoversioner\AutoVersioner.exe" "$(ProjectDir)$(ProjectFileName)" "$(ProjectDir)Properties\AssemblyInfo.template" "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

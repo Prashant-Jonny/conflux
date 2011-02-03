@@ -1,0 +1,26 @@
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using XenoGears.Versioning;
+
+[assembly: AssemblyProduct("Conflux")]
+[assembly: AssemblyTitle("Conflux (" +
+    "built from $"CODEBASE"$ (rev=$REVISION$, hash=$CODEHASH$), " +
+    "built at $TIMESTAMP$, " +
+    "built by $USERHASH$, " +
+    "built on $MACHINEHASH$)")]
+[assembly: AssemblyCopyright("Copyright © 2009-2011 xeno.by")]
+
+[assembly: ComVisible(false)]
+[assembly: InternalsVisibleTo("Conflux.Playground, PublicKey=0024000004800000940000000602000000240000525341310004000001000100ab9abab3f60736e5699895300dd3dc00127c66e2afff0321664b9ae202cee5420c88e693f787cb842fba0e387990bf3ea8734f672edcf9c1823792c44bf2ea7d2c90cdb68a03c7c5f70ed41c7f3d5f7110326446cddc0dddd67d8172b72fefad1e7b710f583354e15aff20a7c445408eefffe6f740891cd0c521230b150d2cae")]
+[assembly: InternalsVisibleTo("Conflux.Runtime, PublicKey=0024000004800000940000000602000000240000525341310004000001000100c38a8f8330e6dd77b357dc7dea51fc968fbbe29a11889a33881fdb6982f6f13e548584b4f89327f50d5d15d3d8f61577bf5e64aaef497e372a7d7f3a59f844cc73d3c0f1b80bfca8246f362bde1f4f50785d32c1742a497d51a9885899ef957783eec63c82a2a255009e6d92ee82eb3c9a82571fc57ac8123cfcca7b39cfffb0")]
+[assembly: InternalsVisibleTo("Conflux.Runtime.LameCpu.Jit, PublicKey=0024000004800000940000000602000000240000525341310004000001000100c38a8f8330e6dd77b357dc7dea51fc968fbbe29a11889a33881fdb6982f6f13e548584b4f89327f50d5d15d3d8f61577bf5e64aaef497e372a7d7f3a59f844cc73d3c0f1b80bfca8246f362bde1f4f50785d32c1742a497d51a9885899ef957783eec63c82a2a255009e6d92ee82eb3c9a82571fc57ac8123cfcca7b39cfffb0")]
+[assembly: InternalsVisibleTo("Conflux.Runtime.Cpu.Jit, PublicKey=0024000004800000940000000602000000240000525341310004000001000100c38a8f8330e6dd77b357dc7dea51fc968fbbe29a11889a33881fdb6982f6f13e548584b4f89327f50d5d15d3d8f61577bf5e64aaef497e372a7d7f3a59f844cc73d3c0f1b80bfca8246f362bde1f4f50785d32c1742a497d51a9885899ef957783eec63c82a2a255009e6d92ee82eb3c9a82571fc57ac8123cfcca7b39cfffb0")]
+[assembly: InternalsVisibleTo("Conflux.Runtime.Cuda.Jit, PublicKey=0024000004800000940000000602000000240000525341310004000001000100c38a8f8330e6dd77b357dc7dea51fc968fbbe29a11889a33881fdb6982f6f13e548584b4f89327f50d5d15d3d8f61577bf5e64aaef497e372a7d7f3a59f844cc73d3c0f1b80bfca8246f362bde1f4f50785d32c1742a497d51a9885899ef957783eec63c82a2a255009e6d92ee82eb3c9a82571fc57ac8123cfcca7b39cfffb0")]
+
+[assembly: Guid("a9361665-2b8b-48a5-8ae7-d885b8f68cb8")]
+[assembly: AssemblyVersion("0.90.0.0")]
+[assembly: AssemblyBuiltFrom(Repository = "$"CODEBASE"$", Revision = "$REVISION$", CodebaseHash = "$CODEHASH$")]
+[assembly: AssemblyBuiltAt(Timestamp = "$TIMESTAMP$")]
+[assembly: AssemblyBuiltBy(UserHash = "$USERHASH$")]
+[assembly: AssemblyBuiltOn(MachineHash = "$MACHINEHASH$")]
